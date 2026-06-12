@@ -6,9 +6,7 @@
     <title>Yağızalp Alparslan | Portfolio</title>
     <style>
         /* --- GENEL AYARLAR --- */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         body {
             background-color: #000000;
             color: #ffffff;
@@ -39,9 +37,7 @@
             letter-spacing: 1px;
             transition: color 0.3s;
         }
-        .navbar a:hover {
-            color: #ffffff;
-        }
+        .navbar a:hover { color: #ffffff; }
 
         /* --- GİRİŞ EKRANI (Main Section) --- */
         .main-section {
@@ -93,9 +89,7 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        .about-text p {
-            margin-bottom: 25px;
-        }
+        .about-text p { margin-bottom: 25px; }
 
         /* --- PROJELER (KARTLAR) --- */
         .projects-grid {
@@ -279,4 +273,32 @@
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-btn" onclick="closeModal(event)">&times;</button>
             <div class="modal-video">
-                <iframe
+                <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h2 class="modal-title" id="modalTitle">Project Title</h2>
+            <div class="modal-desc" id="modalDesc">Project description goes here.</div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(cardElement) {
+            const dataDiv = cardElement.querySelector('.hidden-data');
+            const videoUrl = dataDiv.querySelector('.vid-url').innerText;
+            const title = dataDiv.querySelector('.proj-title').innerText;
+            const descHtml = dataDiv.querySelector('.proj-desc').innerHTML;
+
+            document.getElementById('modalIframe').src = videoUrl;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerHTML = descHtml;
+
+            document.getElementById('projectModal').classList.add('active');
+        }
+
+        function closeModal(event) {
+            document.getElementById('projectModal').classList.remove('active');
+            document.getElementById('modalIframe').src = "";
+        }
+    </script>
+
+</body>
+</html>
