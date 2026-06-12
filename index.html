@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
+    <title>Yağızalp Alparslan | Portfolio</title>
     <style>
+        /* Genel Sayfa Ayarları */
+        html {
+            scroll-behavior: smooth; /* Menüye tıklandığında yumuşak geçiş sağlar */
+        }
         body {
             background-color: #000000;
             color: #ffffff;
@@ -13,119 +17,97 @@
             padding: 0;
         }
 
-        /* Üst Menü Tasarımı */
+        /* Sabit Üst Menü (Navbar) */
         .navbar {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 20px;
-            font-size: 13px;
+            gap: 30px;
+            padding: 25px;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-sizing: border-box;
         }
         .navbar a {
             color: #888888;
             text-decoration: none;
-            text-transform: capitalize;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: color 0.3s;
         }
         .navbar a:hover {
             color: #ffffff;
         }
-        .navbar a.active {
-            color: #ffffff;
-            font-weight: bold;
-        }
 
-        /* Geri Butonu */
-        .back-btn {
-            position: absolute;
-            top: 70px;
-            left: 50px;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 12px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            letter-spacing: 1px;
-            transition: transform 0.2s;
-        }
-        .back-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* Ana Başlık */
-        .header-title {
+        /* Giriş Ekranı (Main Section) */
+        .main-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 0 20px;
+        }
+        .main-title {
             font-family: 'Georgia', serif;
-            font-size: 4.5rem;
+            font-size: 5rem;
             font-weight: normal;
-            margin-top: 100px;
-            margin-bottom: 80px;
+            margin: 0 0 10px 0;
             letter-spacing: -1px;
         }
-
-        /* Kartların Izgara Sistemi */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            padding: 0 50px 100px 50px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Beyaz Proje Kartları */
-        .project-card {
-            background-color: #ffffff;
-            color: #000000;
-            border-radius: 40px;
-            padding: 40px 20px;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
-        }
-
-        /* Kart İçindeki Yazılar */
-        .project-card h3 {
-            font-family: 'Georgia', serif;
-            font-style: italic;
-            text-decoration: underline;
-            font-size: 1.8rem;
-            text-align: center;
+        .main-subtitle {
+            font-size: 1.5rem;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 4px;
             margin: 0;
-            line-height: 1.4;
         }
 
-        /* Mobil Uyumluluk */
-        @media (max-width: 1024px) {
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .header-title {
+        /* Bölüm Tasarımları (Hakkımda, Projeler vb.) */
+        .section {
+            padding: 100px 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            min-height: 60vh;
+        }
+        .section-title {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            font-weight: normal;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #222222;
+            padding-bottom: 20px;
+        }
+
+        /* Hakkımda Metin Alanı */
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #cccccc;
+        }
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        /* Mobil Uyumluluk Ayarları */
+        @media (max-width: 768px) {
+            .main-title {
                 font-size: 3rem;
             }
-            .back-btn {
-                position: relative;
-                display: inline-block;
-                top: 0;
-                left: 0;
-                margin: 20px 0 0 50px;
+            .main-subtitle {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
             }
-        }
-        @media (max-width: 600px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .section {
+                padding: 80px 20px;
             }
-            .navbar {
-                flex-wrap: wrap;
+            .section-title {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -133,45 +115,43 @@
 <body>
 
     <div class="navbar">
-        <a href="#">Main</a>
-        <a href="#">About Me</a>
-        <a href="#" class="active">Projects</a>
-        <a href="#">Contact</a>
-        <a href="#">Project1</a>
-        <a href="#">Project2</a>
-        <a href="#">Project3</a>
+        <a href="#main">Main</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </div>
 
-    <a href="#" class="back-btn">BACK</a>
+    <div id="main" class="main-section">
+        <h1 class="main-title">Yağızalp Alparslan</h1>
+        <p class="main-subtitle">Game Developer</p>
+    </div>
 
-    <h1 class="header-title">My Projects</h1>
+    <div id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-text">
+            <p>
+                I’m a gameplay developer focused on building interactive 3D gameplay systems with Unity and C#. I work on player controls, game mechanics, object interactions, UI logic, and gameplay features that make projects feel responsive and playable.
 
-    <div class="projects-grid">
-        
-        <a href="YOUTUBE_LİNKİNİ_BURAYA_YAPIŞTIRIN" target="_blank" class="project-card">
-            <h3>Co-op Party Game<br>(Unity 6 & Mirror)</h3>
-        </a>
+Alongside Unity, I also have experience creating Unreal Engine projects using Blueprints, where I develop prototype mechanics, interaction systems, and level-based gameplay logic.
 
-        <a href="YOUTUBE_LİNKİNİ_BURAYA_YAPIŞTIRIN" target="_blank" class="project-card">
-            <h3>Gofretmarket<br>Mobile Demo</h3>
-        </a>
+I’m more focused on the technical side of game development than game design. I enjoy turning gameplay ideas into working systems, solving technical problems, writing clean and functional code, and improving how the game feels through iteration.
+             <p>    
+            <p>
+I develop gameplay systems for Unity 3D projects, including player movement, camera behavior, object interactions, scoring systems, UI logic, and core game mechanics. I also create gameplay prototypes in Unreal Engine using Blueprints.
 
-        <a href="YOUTUBE_LİNKİNİ_BURAYA_YAPIŞTIRIN" target="_blank" class="project-card">
-            <h3>Blender 3D<br>Environment Renders</h3>
-        </a>
+My focus is on coding, implementation, and making gameplay systems work smoothly inside the engine.
+             <p>
+        </div>
+    </div>
 
-        <a href="YOUTUBE_LİNKİNİ_BURAYA_YAPIŞTIRIN" target="_blank" class="project-card">
-            <h3>Unreal Engine 5.3<br>AI & Mechanics</h3>
-        </a>
+    <div id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+        <p style="color: #666666;">Projeler alanı bir sonraki aşamada buraya eklenecektir.</p>
+    </div>
 
-        <a href="YOUTUBE_LİNKİNİ_BURAYA_YAPIŞTIRIN" target="_blank" class="project-card">
-            <h3>Game Data Analysis<br>Demo</h3>
-        </a>
-
-        <a href="YOUTUBE_LİNKİNİ_BURAYA_YAPIŞTIRIN" target="_blank" class="project-card">
-            <h3>Character Animation<br>Showcase</h3>
-        </a>
-
+    <div id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <p style="color: #666666;">İletişim alanı bir sonraki aşamada buraya eklenecektir.</p>
     </div>
 
 </body>
