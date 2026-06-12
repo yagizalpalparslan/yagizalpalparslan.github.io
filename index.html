@@ -234,7 +234,7 @@
             <div class="project-card" onclick="openModal(this)">
                 <h3>Gofret Market<br>(Mobile Idle)</h3>
                 <div class="hidden-data" style="display: none;">
-                    <span class="vid-url">https://www.youtube.com/embed/=cBMYaWii2Lc</span>
+                    <span class="vid-url">https://www.youtube.com/embed/cBMYaWii2Lc</span>
                     <span class="proj-title">Gofret Market</span>
                     <div class="proj-desc">
                         <span class="role-highlight">Unity Gameplay Developer (2025 – Present)</span>
@@ -279,32 +279,4 @@
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-btn" onclick="closeModal(event)">&times;</button>
             <div class="modal-video">
-                <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <h2 class="modal-title" id="modalTitle">Project Title</h2>
-            <div class="modal-desc" id="modalDesc">Project description goes here.</div>
-        </div>
-    </div>
-
-    <script>
-        function openModal(cardElement) {
-            const dataDiv = cardElement.querySelector('.hidden-data');
-            const videoUrl = dataDiv.querySelector('.vid-url').innerText;
-            const title = dataDiv.querySelector('.proj-title').innerText;
-            const descHtml = dataDiv.querySelector('.proj-desc').innerHTML;
-
-            document.getElementById('modalIframe').src = videoUrl;
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDesc').innerHTML = descHtml;
-
-            document.getElementById('projectModal').classList.add('active');
-        }
-
-        function closeModal(event) {
-            document.getElementById('projectModal').classList.remove('active');
-            document.getElementById('modalIframe').src = "";
-        }
-    </script>
-
-</body>
-</html>
+                <iframe
