@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun Geliştirici Portfolyosu</title>
+    <style>
+        :root {
+            --primary-color: #00ffcc;
+            --bg-color: #0f0f13;
+            --card-bg: #1a1a24;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #121218 0%, var(--bg-color) 100%);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        h1 span {
+            color: var(--primary-color);
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .section-title {
+            font-size: 2em;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 204, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            background-color: rgba(0, 255, 204, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid var(--primary-color);
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 40px;
+            background-color: var(--card-bg);
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Merhaba, Ben <span>[Adınız]</span></h1>
+        <div class="subtitle">Oyun Geliştiricisi & 3D Tasarımcı</div>
+        <p style="max-width: 600px; margin: 20px auto; color: var(--text-muted);">
+            Mobil ve PC platformları için yenilikçi mekanikler tasarlayan, ağ programlama ve 3D modelleme konularında deneyimli bir geliştiriciyim. Unutulmaz oyuncu deneyimleri yaratmayı hedefliyorum.
+        </p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Projelerim</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <h3>Co-op Party Game (Steam)</h3>
+                <p><strong>Rol:</strong> Teknik Geliştirici</p>
+                <p>Fizik tabanlı ve rekabetçi bir co-op parti oyunu. Oyuncu hareket mekanikleri, uzayan silah etkileşimleri ve ağ senkronizasyonu süreçlerini yönettim.</p>
+                <div class="skills">
+                    <span class="skill-tag">Unity 6</span>
+                    <span class="skill-tag">Mirror</span>
+                    <span class="skill-tag">C#</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Gofretmarket (Mobil)</h3>
+                <p><strong>Rol:</strong> Oyun Tasarımcısı & Geliştirici</p>
+                <p>Üretim döngüleri ve kaynak yönetimi üzerine kurulu simülasyon projesi. Temel oyun döngüsünün kodlanması, UI tasarımı ve reklam entegrasyonu süreçlerini tamamladım.</p>
+                <div class="skills">
+                    <span class="skill-tag">Oyun Tasarımı</span>
+                    <span class="skill-tag">Mobil Geliştirme</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>3D Çevre ve Varlık Tasarımı</h3>
+                <p><strong>Odak:</strong> Modelleme & Optimizasyon</p>
+                <p>Oyun motorlarına entegrasyon için optimize edilmiş 3D modeller. Garaj ortamı modellemesi ve karakter animasyonlarının FBX formatında dışa aktarımı.</p>
+                <div class="skills">
+                    <span class="skill-tag">Blender</span>
+                    <span class="skill-tag">Unreal Engine 5.3.2</span>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="section-title" style="margin-top: 60px;">Teknik Yetenekler</h2>
+        <div class="skills" style="margin-bottom: 40px;">
+            <span class="skill-tag">Unreal Engine 5.3.2</span>
+            <span class="skill-tag">Unity 6</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Mirror (Networking)</span>
+            <span class="skill-tag">Blender (3D)</span>
+            <span class="skill-tag">SPSS (Veri Analizi)</span>
+            <span class="skill-tag">Yapay Zeka Destekli Geliştirme</span>
+        </div>
+    </div>
+
+    <footer>
+        <h2 style="color: var(--primary-color);">İletişime Geçin</h2>
+        <p>Birlikte harika projeler üretebiliriz.</p>
+        <p>
+            <a href="mailto:emailiniz@gmail.com">emailiniz@gmail.com</a> | 
+            <a href="#">LinkedIn</a> | 
+            <a href="#">GitHub</a> | 
+            <a href="#">Itch.io</a>
+        </p>
+    </footer>
+
+</body>
+</html>
