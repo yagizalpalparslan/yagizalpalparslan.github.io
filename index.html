@@ -101,11 +101,10 @@
             background-color: #ffffff;
             color: #000000;
             border-radius: 30px;
-            padding: 40px 20px;
-            min-height: 250px;
+            padding: 0;
+            min-height: 280px;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -124,6 +123,23 @@
         }
 
         /* --- AÇILIR PENCERE (MODAL) --- */
+        .project-card-content {
+            padding: 24px 18px 28px 18px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+        .project-cover {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background-color: #000000;
+            border-bottom: 1px solid #dddddd;
+        }
+
         .art-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -141,6 +157,7 @@
             padding: 0;
             box-sizing: border-box;
             cursor: pointer;
+            overflow: hidden;
             overflow: hidden;
             transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
         }
@@ -354,7 +371,10 @@
         <div class="projects-grid">
             
             <div class="project-card" onclick="openModal(this)">
-                <h3>FarmToMarket<br>(Mobile Idle)</h3>
+                <img class="project-cover" src="images/projects/FarmToMarketCover.png" alt="FarmToMarket gameplay cover">
+                <div class="project-card-content">
+                    <h3>FarmToMarket<br>(Mobile Idle)</h3>
+                </div>
                 <div class="hidden-data" style="display: none;">
                     <span class="vid-url">https://www.youtube-nocookie.com/embed/yiIoqpVOjE4</span>
                     <span class="proj-title">FarmToMarket</span>
@@ -366,7 +386,10 @@
             </div>
 
             <div class="project-card" onclick="openModal(this)">
-                <h3>BubbCour<br>(GGJ 2025)</h3>
+                <img class="project-cover" src="images/projects/BubbCourCover.png" alt="BubbCour menu cover">
+                <div class="project-card-content">
+                    <h3>BubbCour<br>(GGJ 2025)</h3>
+                </div>
                 <div class="hidden-data" style="display: none;">
                     <span class="vid-url">https://www.youtube-nocookie.com/embed/i1PK6jOtlIo</span> 
                     <span class="proj-title">BubbCour (Global Game Jam 2025)</span>
@@ -378,7 +401,10 @@
             </div>
 
             <div class="project-card" onclick="openModal(this)">
-                <h3>Blacksmith Ritual<br>(Group Project)</h3>
+                <img class="project-cover" src="images/projects/BlacksmithRitualCover.png" alt="Blacksmith Ritual gameplay cover">
+                <div class="project-card-content">
+                    <h3>Blacksmith Ritual<br>(Group Project)</h3>
+                </div>
                 <div class="hidden-data" style="display: none;">
                    <span class="vid-url">https://www.youtube-nocookie.com/embed/04w8E77tit4</span>
                     <span class="proj-title">Blacksmith Ritual (2025)</span>
