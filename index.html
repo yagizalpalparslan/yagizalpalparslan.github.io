@@ -124,6 +124,104 @@
         }
 
         /* --- AÇILIR PENCERE (MODAL) --- */
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .art-card {
+            border: 1px solid #222222;
+            background-color: #0b0b0b;
+            border-radius: 20px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            color: #cccccc;
+            text-align: left;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        }
+        .art-card:hover {
+            transform: translateY(-8px);
+            border-color: #ffffff;
+            background-color: #151515;
+        }
+        .art-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.35rem;
+            font-weight: normal;
+            margin: 0 0 16px 0;
+            color: #ffffff;
+        }
+        .art-card-content {
+            padding: 22px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .art-cover {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background-color: #000000;
+            border-bottom: 1px solid #222222;
+        }
+        .art-card p {
+            margin: 0 0 14px 0;
+            line-height: 1.6;
+        }
+        .art-card .card-hint {
+            color: #888888;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .modal-gallery img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            border-radius: 10px;
+            background-color: #000000;
+            border: 1px solid #222222;
+        }
+        .modal-gallery img:first-child {
+            grid-column: 1 / -1;
+            aspect-ratio: 16 / 8;
+        }
+        .modal-gallery:empty {
+            display: none;
+        }
+        .gallery-placeholder {
+            border: 1px dashed #444444;
+            border-radius: 10px;
+            color: #888888;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .resource-link {
+            display: inline-block;
+            color: #000000;
+            background-color: #ffffff;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 24px;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .resource-link:hover {
+            background-color: #dddddd;
+            transform: translateY(-2px);
+        }
+
         .modal-overlay {
             display: none;
             position: fixed;
@@ -218,6 +316,8 @@
             .section { padding: 80px 20px; }
             .section-title { font-size: 2.2rem; }
             .projects-grid { grid-template-columns: 1fr; }
+            .art-grid { grid-template-columns: 1fr; }
+            .modal-gallery { grid-template-columns: 1fr; }
             .modal-video iframe { height: 250px; }
             .contact-btn { width: 100%; box-sizing: border-box; }
         }
@@ -229,6 +329,7 @@
         <a href="#main">Main</a>
         <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
+        <a href="#art">Art & Game Design</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -253,13 +354,13 @@
         <div class="projects-grid">
             
             <div class="project-card" onclick="openModal(this)">
-                <h3>Gofret Market<br>(Mobile Idle)</h3>
+                <h3>FarmToMarket<br>(Mobile Idle)</h3>
                 <div class="hidden-data" style="display: none;">
-                    <span class="vid-url">https://www.youtube-nocookie.com/embed/cBMYaWii2Lc</span>
-                    <span class="proj-title">Gofret Market</span>
+                    <span class="vid-url">https://www.youtube-nocookie.com/embed/yiIoqpVOjE4</span>
+                    <span class="proj-title">FarmToMarket</span>
                     <div class="proj-desc">
                         <span class="role-highlight">Unity Gameplay Developer (2025 – Present)</span>
-                        <p>Developing a 3D mobile idle market simulation game inspired by My Mini Mart. I implemented core gameplay systems including player movement, product collection, carrying/stacking mechanics, customer interactions, selling flow, money UI, upgrades, and area progression. I also worked on production points, shelf interactions, save/load logic, and mobile-focused gameplay optimization.</p>
+                        <p>Developing a 3D mobile idle market simulation game inspired by My Mini Mart. I implemented core gameplay systems including player movement, product collection, carrying/stacking mechanics, customer interactions, selling flow, money UI, upgrades, and area progression. I also worked on production points, shelf interactions, save/load logic, and mobile-focused gameplay optimization. The main priority of the project is coding and implementation, while visual design is planned to be handled in the final stage.</p>
                     </div>
                 </div>
             </div>
@@ -293,6 +394,89 @@
         </div>
     </div>
 
+    <div id="art" class="section">
+        <h2 class="section-title">Art & Game Design</h2>
+        <div class="art-grid">
+            <div class="art-card" onclick="openArtModal(this)">
+                <img class="art-cover" src="images/art/FinalCover.png" alt="Garden and dog 3D final project cover">
+                <div class="art-card-content">
+                    <h3>3D Final Project - Garden and Dog Modeling</h3>
+                    <p class="card-hint">View details and images</p>
+                    <div class="hidden-data" style="display: none;">
+                        <span class="art-video-url">https://www.youtube-nocookie.com/embed/2rijHfMTy1Y</span>
+                        <span class="art-title">3D Final Project - Garden and Dog Modeling</span>
+                        <div class="art-desc">
+                            <p>For this project, I created a 3D model of my dog and our garden in Blender. My goal was to design a personal environment that could be used both in my academic work and potentially in one of my own future game projects.</p>
+                            <p>I used the real garden and my dog as references, while also adding my own creative interpretation to the scene. I focused on capturing the overall structure of the environment and the recognizable characteristics of my dog in a stylized way.</p>
+                            <p>Through this project, I gained experience in environment modeling, organic modeling, scene composition, material creation, and lighting. It also helped me practice transforming a real-life location into a game-ready 3D environment.</p>
+                        </div>
+                        <div class="art-images">
+                            <img src="images/art/FinalCover.png" alt="Garden and dog 3D final project render">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="art-card" onclick="openArtModal(this)">
+                <img class="art-cover" src="images/art/MidtermCover.png" alt="Cars-inspired motel 3D midterm project cover">
+                <div class="art-card-content">
+                    <h3>3D Midterm Project - Cars-Inspired Hotel and Room Design</h3>
+                    <p class="card-hint">View details and images</p>
+                    <div class="hidden-data" style="display: none;">
+                        <span class="art-video-url"></span>
+                        <span class="art-title">3D Midterm Project - Cars-Inspired Hotel and Room Design</span>
+                        <div class="art-desc">
+                            <p>For this project, I modeled a hotel inspired by the world of <em>Cars</em>, along with the interior of one of its rooms.</p>
+                            <p>While designing the scene, I aimed to preserve the visual identity and atmosphere of the movie while adding my own interpretation to the environment. I used pre-made models of Lightning McQueen and Sally and integrated them into the scene to support the composition and overall theme.</p>
+                            <p>This project allowed me to improve my skills in architectural modeling, interior design, scene composition, lighting, and the integration of pre-made assets into an original environment.</p>
+                        </div>
+                        <div class="art-images">
+                            <img src="images/art/MidtermCover.png" alt="Cars-inspired motel exterior render">
+                            <img src="images/art/Garage.png" alt="Cars-inspired garage interior render">
+                            <img src="images/art/PistonCup.png" alt="Piston Cup trophy render">
+                            <img src="images/art/Room.png" alt="Cars-inspired room interior render">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="art-card" onclick="openArtModal(this)">
+                <img class="art-cover" src="images/art/UICover.png" alt="Market simulation UI project cover">
+                <div class="art-card-content">
+                    <h3>UI Project - Market Simulation Game Interface</h3>
+                    <p class="card-hint">View details and images</p>
+                    <div class="hidden-data" style="display: none;">
+                        <span class="art-video-url">https://www.youtube-nocookie.com/embed/JEb5VGZqLe0</span>
+                        <span class="art-title">UI Project - Market Simulation Game Interface</span>
+                        <div class="art-desc">
+                            <p>For this project, I designed a user interface for a market simulation game. The interface was created with the intention of being usable in a future game project.</p>
+                            <p>I focused on presenting important gameplay information such as money, products, tasks, store upgrades, and player interactions in a clear and accessible way. My goal was to create a design that was both visually consistent and functional.</p>
+                            <p>Through this project, I worked on user experience, visual hierarchy, button and icon design, information layout, and the overall usability of game interfaces.</p>
+                        </div>
+                        <div class="art-images">
+                            <img src="images/art/UICover.png" alt="Market simulation UI project cover screen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="art-card" onclick="openArtModal(this)">
+                <div class="art-card-content">
+                    <h3>Limi&rsquo;s Grimes - Narrative Design Project</h3>
+                    <p class="card-hint">View details and PDF</p>
+                    <div class="hidden-data" style="display: none;">
+                        <span class="art-video-url"></span>
+                        <span class="art-title">Limi&rsquo;s Grimes - Narrative Design Project</span>
+                        <div class="art-desc">
+                            <p><em>Limi&rsquo;s Grimes</em> is a narrative-driven horror game concept set in rural America in 1977. The story follows a group of young characters exploring an abandoned uranium mine and later shifts to a CIA agent investigating their disappearance.</p>
+                            <p>The project features branching choices, hidden narrative variables, multiple endings, environmental storytelling, character development, gameplay integration, and detailed scene scripting.</p>
+                            <p>My main responsibilities included editing the prologue and main storyline, improving narrative consistency, and developing the characters and their personalities.</p>
+                            <a class="resource-link" href="files/Narrative-Finall.pdf" target="_blank">Open Narrative Design PDF</a>
+                        </div>
+                        <div class="art-images"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="contact" class="section">
         <h2 class="section-title">Contact</h2>
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
@@ -318,6 +502,8 @@
             <div class="modal-video">
                 <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <div class="modal-gallery" id="modalGallery"></div>
+            <div class="gallery-placeholder" id="galleryPlaceholder">Images will be added here.</div>
             <h2 class="modal-title" id="modalTitle">Project Title</h2>
             <div class="modal-desc" id="modalDesc">Project description goes here.</div>
         </div>
@@ -330,6 +516,9 @@
             const title = dataDiv.querySelector('.proj-title').innerText;
             const descHtml = dataDiv.querySelector('.proj-desc').innerHTML;
 
+            document.querySelector('.modal-video').style.display = 'block';
+            document.getElementById('modalGallery').innerHTML = "";
+            document.getElementById('galleryPlaceholder').style.display = 'none';
             document.getElementById('modalIframe').src = videoUrl;
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDesc').innerHTML = descHtml;
@@ -337,9 +526,28 @@
             document.getElementById('projectModal').classList.add('active');
         }
 
+        function openArtModal(cardElement) {
+            const dataDiv = cardElement.querySelector('.hidden-data');
+            const videoUrl = dataDiv.querySelector('.art-video-url').innerText.trim();
+            const title = dataDiv.querySelector('.art-title').innerText;
+            const descHtml = dataDiv.querySelector('.art-desc').innerHTML;
+            const imagesHtml = dataDiv.querySelector('.art-images').innerHTML.trim();
+
+            document.querySelector('.modal-video').style.display = videoUrl ? 'block' : 'none';
+            document.getElementById('modalIframe').src = videoUrl;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerHTML = descHtml;
+            document.getElementById('modalGallery').innerHTML = imagesHtml;
+            document.getElementById('galleryPlaceholder').style.display = imagesHtml ? 'none' : 'block';
+
+            document.getElementById('projectModal').classList.add('active');
+        }
+
         function closeModal(event) {
             document.getElementById('projectModal').classList.remove('active');
             document.getElementById('modalIframe').src = "";
+            document.getElementById('modalGallery').innerHTML = "";
+            document.getElementById('galleryPlaceholder').style.display = 'none';
         }
     </script>
 
